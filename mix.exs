@@ -37,7 +37,7 @@ defmodule Supabase.Storage.MixProject do
       supabase_dep(),
       {:ecto, "~> 3.10"},
       {:mox, "~> 1.2", only: :test},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:ex_doc, ">= 0.0.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false}
     ]
