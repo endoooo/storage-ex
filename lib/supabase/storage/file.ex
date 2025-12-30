@@ -283,7 +283,7 @@ defmodule Supabase.Storage.File do
     with {:ok, resp} <- FileHandler.create_signed_url(s.client, s.bucket_id, clean_path, opts) do
       uri = URI.parse(Path.join(s.client.storage_url, resp.body["signedURL"]))
 
-      if is_nil(download) do
+      if !download do
         {:ok, to_string(uri)}
       else
         query = URI.encode_query(%{"download" => if(download === true, do: "", else: download)})
